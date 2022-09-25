@@ -16,9 +16,32 @@
 
 h3 {          
     padding: .625em;
+    color: var(--my-black);  
+    font-family: 'Oswald', sans-serif;
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
     color: var(--my-black);
-    
-    // font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    line-height: 1.75em;
+    font-size: 1.375em;
+    cursor: pointer;
+    padding: 0.2em 0 .3em 0;
+}
+
+.btn {
+    border: 1px solid var(--secondary-color);
+    padding: 0.8em .6em;
+    color: var(--my-black);
+    font-weight: bold;
+    border-radius: .2em;
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
 }
 
 
@@ -171,19 +194,13 @@ h3 {
                     border-radius: 0.42em;
                     margin-left: 1.8em;
                 }
+                
 
-                h2 {
-                    font-family: 'Oswald', sans-serif;
-                    color: var(--my-black);
-                    font-weight: 700;
-                    line-height: 1.75em;
-                    font-size: 1.375em;
-                    cursor: pointer;
-                    padding: 0.2em 0 .3em 0;
-                }
+ 
                 a:link , a:visited {
                     text-decoration: none;
                     color: var(--my-black);
+                    font-family: 'Oswald', sans-serif;
                 }
                 a:hover , a:active {
                         font-weight: bolder;
@@ -237,11 +254,7 @@ h3 {
 }
 
 
-
-
-
-
-//  -------sticky navbar -------
+//  -------sidebar -------
 
 aside {
 
@@ -334,3 +347,54 @@ aside {
     
 }
 
+// <----blog details page --------->
+
+.blog-details {
+    flex-basis: 70%;
+    margin: 5%;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+
+    .icons {
+        display: flex;
+        align-content: center;   
+        justify-content: space-between;
+
+        p {
+            padding: 1.2em ;
+            color: var(--my-black);
+        }         
+    }
+
+    p {
+        color: var(--secondary-color);
+        padding: 0;
+        text-align: justify;
+    }
+    .comment-box {
+        border: 2px solid var(--secondary-color);
+        margin: 50px 0;
+        padding: 10px 20px;
+    }
+
+    .comment-form input, .comment-box textarea {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin: 15px 0;
+        box-sizing: border-box;
+        border: none;
+        outline: none;
+        background: #f0f0f0;
+        resize: none;
+    }  
+
+}
+
+.blog-details-aside {
+    margin: 5%;
+}

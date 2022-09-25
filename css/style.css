@@ -15,6 +15,31 @@
 h3 {
   padding: 0.625em;
   color: var(--my-black);
+  font-family: "Oswald", sans-serif;
+}
+
+h2 {
+  font-family: "Oswald", sans-serif;
+  color: var(--my-black);
+  font-weight: 700;
+  line-height: 1.75em;
+  font-size: 1.375em;
+  cursor: pointer;
+  padding: 0.2em 0 0.3em 0;
+}
+
+.btn {
+  border: 1px solid var(--secondary-color);
+  padding: 0.8em 0.6em;
+  color: var(--my-black);
+  font-weight: bold;
+  border-radius: 0.2em;
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
 }
 
 .tags a {
@@ -134,18 +159,10 @@ h3 {
   border-radius: 0.42em;
   margin-left: 1.8em;
 }
-.blog-area .post .post-body h2 {
-  font-family: "Oswald", sans-serif;
-  color: var(--my-black);
-  font-weight: 700;
-  line-height: 1.75em;
-  font-size: 1.375em;
-  cursor: pointer;
-  padding: 0.2em 0 0.3em 0;
-}
 .blog-area .post .post-body a:link, .blog-area .post .post-body a:visited {
   text-decoration: none;
   color: var(--my-black);
+  font-family: "Oswald", sans-serif;
 }
 .blog-area .post .post-body a:hover, .blog-area .post .post-body a:active {
   font-weight: bolder;
@@ -254,4 +271,47 @@ aside ul li a {
   text-decoration: none;
   color: var(--secondary-color);
   font-size: small;
+}
+
+.blog-details {
+  flex-basis: 70%;
+  margin: 5%;
+}
+.blog-details img {
+  width: 100%;
+  height: auto;
+}
+.blog-details .icons {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+.blog-details .icons p {
+  padding: 1.2em;
+  color: var(--my-black);
+}
+.blog-details p {
+  color: var(--secondary-color);
+  padding: 0;
+  text-align: justify;
+}
+.blog-details .comment-box {
+  border: 2px solid var(--secondary-color);
+  margin: 50px 0;
+  padding: 10px 20px;
+}
+.blog-details .comment-form input, .blog-details .comment-box textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 15px 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  background: #f0f0f0;
+  resize: none;
+}
+
+.blog-details-aside {
+  margin: 5%;
 }/*# sourceMappingURL=style.css.map */
