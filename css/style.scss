@@ -31,20 +31,23 @@ h2 {
 }
 
 .btn {
-    border: 1px solid var(--secondary-color);
-    padding: 0.8em .6em;
+    border: 1px solid var(--my-black);
+    padding: 0.8em 1.6em;
     color: var(--my-black);
-    font-weight: bold;
+   
     border-radius: .2em;
-}
-
-.btn:hover {
     background-color: var(--primary-color);
-    border: none;
     color: white;
 }
 
+.btn:hover {
+       font-weight: bold;
+}
 
+.date {
+                // opacity: .6;
+                color: var(--secondary-color);
+            }
 .tags {
         a {
             text-decoration: none;
@@ -177,10 +180,7 @@ h2 {
                     border-radius: 50%;
             }
 
-            .date {
-                // opacity: .6;
-                color: var(--secondary-color);
-            }
+ 
         }    
         
         .post-body {
@@ -395,6 +395,72 @@ aside {
 
 }
 
+.similar-posts {
+    margin: 1.2em 0 1em 0;
+    h2 { padding-bottom: 1.2em;}
+
+    .flex-container {
+        display: flex;
+        align-items: center;
+
+        .small-posts {
+            padding: .5em;
+            img {
+                // max-width: 12em;
+                max-width: 95%;
+                height: 9em;
+            }
+
+            .small-icons {
+                display: flex;
+                align-items: center;
+                padding: 1.2em 0 1em 0;
+
+                p {padding: .3em;}
+            }
+            h3 {
+                padding: 0.5em 0;
+            }
+            p {
+                padding: .8em 0 0 0;
+                a {
+                    text-decoration: none;
+                    color: var(--primary-color);
+                    font-weight: bold;
+                    
+                }
+            }
+        }
+    }
+}
+
 .blog-details-aside {
     margin: 5%;
+}
+
+// ----------comments-------
+
+.comments {
+    .comment-info {
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+        .user-details {
+            display: flex;
+            align-items: top;
+            font-size: .9em;
+            p {padding: 0 0 0 .5em;}
+            .name { font-weight: bold;
+                    color: var(--my-black);}
+
+        }
+    }
+    .comment-text {
+        padding: 0 0 .2em 2.6em;
+    }
 }

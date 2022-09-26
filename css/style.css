@@ -29,17 +29,20 @@ h2 {
 }
 
 .btn {
-  border: 1px solid var(--secondary-color);
-  padding: 0.8em 0.6em;
+  border: 1px solid var(--my-black);
+  padding: 0.8em 1.6em;
   color: var(--my-black);
-  font-weight: bold;
   border-radius: 0.2em;
+  background-color: var(--primary-color);
+  color: white;
 }
 
 .btn:hover {
-  background-color: var(--primary-color);
-  border: none;
-  color: white;
+  font-weight: bold;
+}
+
+.date {
+  color: var(--secondary-color);
 }
 
 .tags a {
@@ -145,9 +148,6 @@ h2 {
   width: 40px;
   border: 1px solid var(--primary-color);
   border-radius: 50%;
-}
-.blog-area .post .post-titles .date {
-  color: var(--secondary-color);
 }
 .blog-area .post .post-body {
   display: flex;
@@ -312,6 +312,68 @@ aside ul li a {
   resize: none;
 }
 
+.similar-posts {
+  margin: 1.2em 0 1em 0;
+}
+.similar-posts h2 {
+  padding-bottom: 1.2em;
+}
+.similar-posts .flex-container {
+  display: flex;
+  align-items: center;
+}
+.similar-posts .flex-container .small-posts {
+  padding: 0.5em;
+}
+.similar-posts .flex-container .small-posts img {
+  max-width: 95%;
+  height: 9em;
+}
+.similar-posts .flex-container .small-posts .small-icons {
+  display: flex;
+  align-items: center;
+  padding: 1.2em 0 1em 0;
+}
+.similar-posts .flex-container .small-posts .small-icons p {
+  padding: 0.3em;
+}
+.similar-posts .flex-container .small-posts h3 {
+  padding: 0.5em 0;
+}
+.similar-posts .flex-container .small-posts p {
+  padding: 0.8em 0 0 0;
+}
+.similar-posts .flex-container .small-posts p a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
 .blog-details-aside {
   margin: 5%;
+}
+
+.comments .comment-info {
+  display: flex;
+  align-items: center;
+}
+.comments .comment-info img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.comments .comment-info .user-details {
+  display: flex;
+  align-items: top;
+  font-size: 0.9em;
+}
+.comments .comment-info .user-details p {
+  padding: 0 0 0 0.5em;
+}
+.comments .comment-info .user-details .name {
+  font-weight: bold;
+  color: var(--my-black);
+}
+.comments .comment-text {
+  padding: 0 0 0.2em 2.6em;
 }/*# sourceMappingURL=style.css.map */
