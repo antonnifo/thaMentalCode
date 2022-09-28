@@ -441,6 +441,16 @@ aside {
 // ----------comments-------
 
 .comments {
+
+    .comment {
+        margin: 0 0 1.2em 1.5em;
+        .likes {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            margin: .6em 0 .2em 0;
+        }
+    }
     .comment-info {
         display: flex;
         align-items: center;
