@@ -12,6 +12,16 @@
   font-family: "Roboto", sans-serif;
 }
 
+p::-moz-selection {
+  color: white;
+  background: var(--primary-color);
+}
+
+p::selection {
+  color: white;
+  background: var(--primary-color);
+}
+
 h3 {
   padding: 0.625em;
   color: var(--my-black);

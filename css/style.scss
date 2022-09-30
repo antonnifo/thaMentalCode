@@ -14,6 +14,11 @@
     // background-color: #ffffff00;
 }
 
+p::selection {
+  color: white;
+  background: var(--primary-color);
+}
+
 h3 {          
     padding: .625em;
     color: var(--my-black);  
