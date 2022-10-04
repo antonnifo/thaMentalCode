@@ -1,0 +1,210 @@
+@use '../util/' as u;
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    // margin: 2em .8em .5em .8em;
+    // max-width: 1600px;
+    width: min(100% - 40px, 1600px);
+    margin: 2em auto .5em auto;
+
+    @include u.breakpoint(medium){
+        flex-direction: column;
+        
+        &__sidebar {
+            border: none;
+            
+        }        
+
+    }
+ 
+
+
+    &__main {
+        flex-basis: 70%;
+
+    .post {
+        
+            border-bottom: .01em solid  var(--secondary-color);
+            margin: 1.2em auto;
+            padding: 0 .2em;
+            max-width: 80%;
+        
+
+            .post-titles {
+                display: flex;
+                align-items: center;
+                width: 660px;
+                height: 40px;
+                
+                line-height: 1,25em;
+                font-family: 'Oswald', sans-serif;
+                font-size: 14px;
+                cursor: pointer;
+                    
+
+            .profile-pic {
+                        height: 40px;
+                        width: 40px;
+                        border: 1px solid var(--primary-color);
+                        border-radius: 50%;
+                }
+
+    
+            }    
+            
+            .post-body {
+                    display: flex;
+
+                    .post-image {
+                
+                        width: 8.125em;
+                        height: 7em;
+                        display: block;
+                        border-radius: 0.42em;
+                        margin-left: 1.8em;
+                    }
+                    
+
+
+                    .description {
+                        font-family: 'Roboto', sans-serif;
+                        color: var(--secondary-color);
+                    }
+                }
+
+            .post-footer {
+                margin: 2em 0 1.2em;
+                display: flex;      
+                align-items: center;
+                justify-content: space-between;
+
+                ul {
+                    list-style: none;
+                    display: flex;      
+                    align-items: center;
+
+                    li {
+                        padding: 0.3em;
+
+                        a {
+                            text-decoration: none;
+                            text-align: center;
+                            display: inline-block;
+                            background-color: var(--primary-color);
+                            color: white;
+                            padding: .4em;
+                            border-radius: .5em;
+                            font-size: .8em;
+                        }
+                    }
+                }
+
+                .icons {
+                    display: flex;
+                    align-content: center;   
+                    p {
+                        padding: 0 .8em 0 0;
+                        color: var(--my-black);
+                    }         
+                }
+            }
+
+        }
+
+
+    }
+
+    &__sidebar {
+
+        flex-basis: 30%;
+        border-left: .01em solid  var(--secondary-color);   
+        padding-left: 2em;
+
+            .tags-section {
+                    .title {
+                        color: var(--my-black);
+                        padding-left: 0;
+                    }
+        
+    }
+
+    .staff-picks {
+        margin: 1.2em 0;
+
+        .staff-picks-box {
+            margin: .2em 0 .9em 0;
+        }
+
+        .writer-details {
+            display: flex;
+            align-items: center;
+            
+
+            img {
+                height: 1.25em;
+                width: 1.25em;
+                border-radius: 50%;
+                margin-right: .2em;
+            }
+        }
+    }
+
+    p {
+        padding: .2em .3em .2em .3em;
+        font-size: .8em;
+        color: var(--my-black);
+        font-weight: bold;
+    }
+
+    h5 {
+        margin: .2em 0;
+        font-size: 1em;
+        color: var(--my-black);
+        cursor: pointer;
+
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    h3 {
+        padding-left: 0;        
+    }
+
+    .categories {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 0 .2em 0;
+                       
+    }
+
+    .pill {
+        background: var(--primary-color);
+        color: #fff;
+        border-radius: .5em;
+    }
+
+    ul {
+        list-style: none;
+        position: relative;
+        bottom: 0;
+
+        li {
+            display: inline-block;
+            padding: .2em;
+
+            a {
+                text-decoration: none;
+                color: var(--secondary-color);
+                font-size: small;
+            }
+        }
+    }  
+        
+
+    }
+    
+}
