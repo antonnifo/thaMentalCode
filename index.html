@@ -13,24 +13,25 @@
     <secion class="main">
 
         <div class="container">
-
-            <section class="hero">
-                <div class="navbar">
-
-                     <!-- <a href="#"><img src="#" alt="logo"></a> -->
+          
+                <section class="navbar">
+                   <!-- <a href="#"><img src="#" alt="logo"></a> -->
                      <a href="#" style="font-weight:bold;">thaMental<span class="code">Code</span></a>
-                    <nav>                     
+                    <nav id="NavLinks">   
+                        <i class="menu-icons fa-solid fa-xmark" onclick="hideMenu()"></i>                  
                         <ul>
                             <li ><a href="#" ><i class="fa-regular fa-rectangle-list" ></i></a></li>
                             <li><a href="#"><i class="fa-solid fa-bell-slash"></i></a></li>
                             <li><a href="#">Sign in</a></li>
                             <li><a href="#" class="contact-btn">Sign Up</a></li>
+    
                         
-                        </ul>
+                        </ul>                       
                     </nav>
-                </div>            
-
-            
+                    <i class="menu-icons fa-solid fa-bars" onclick="showMenu()"></i>
+                </section>      
+                
+            <section class="hero">      
                 <div class="form">
                     <form action="#">
                         <input type="text" name="search" placeholder="Search.."> 
@@ -292,9 +293,21 @@
 
 
 
-        </div>
-    </secion>
+ </div>
+ </secion>
 
+<!-- -------------Js for mobile toggle menu---------- -->
+ <script>
+    var navLinks = document.getElementById("NavLinks")
+
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }    
+ </script>
 
 </body>
 </html>
