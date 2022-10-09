@@ -369,15 +369,16 @@ h2 {
 
         p {
             padding: 1.2em ;
-            color: var(--my-black);
+            color: var(--secondary-color);
         }         
     }
 
     p {
         color: var(--secondary-color);
         padding: 0;
-        text-align: justify;
+      
     }
+
     .comment-box {
         border: 2px solid var(--secondary-color);
         margin: 50px 0;
@@ -396,11 +397,79 @@ h2 {
         resize: none;
     }  
 
+    @include u.breakpoint(medium){    
+        margin: 5% 1% ;
+
+        .icons {
+             margin-left: -.15em;
+
+            p { 
+                font-size: .86em;
+                padding: 0em;
+                margin: 1em 0;
+            }
+
+            p:last-child {
+                display: none;
+            }
+        }
+
+        h2 {
+            font-size: 1.4em;
+        }
+
+    }    
+
 }
 
 .similar-posts {
     margin: 1.2em 0 1em 0;
     h2 { padding-bottom: 1.2em;}
+
+    @include u.breakpoint(medium){  
+
+       margin: .2em 0 .2em 0;
+       h2 { padding-bottom: .2em;}   
+       
+       .small-posts:last-child {
+        display: none;
+       }
+
+       .small-posts {
+            padding: .2em;
+
+            img {
+                height: 7em;
+            }
+
+            .small-icons p:last-child {
+                    display: none;
+            }
+
+            .small-icons {
+                padding: 1em 0 1em 0;
+                margin: 0;
+
+            }
+
+            h3 {  padding: .5em 0;}
+
+            p {
+                padding: 0;
+                a {
+                    text-decoration: none;
+                    color: var(--primary-color);
+                    font-weight: bold;
+                    
+                }
+            }
+
+
+        }
+
+        }
+
+
 
     .flex-container {
         display: flex;
@@ -421,9 +490,11 @@ h2 {
 
                 p {padding: .3em;}
             }
+
             h3 {
-                padding: 0.5em 0;
+                padding: .5em 0;
             }
+
             p {
                 padding: .8em 0 0 0;
                 a {
@@ -435,10 +506,6 @@ h2 {
             }
         }
     }
-}
-
-.blog-details-aside {
-    margin: 5%;
 }
 
 // ----------comments-------
