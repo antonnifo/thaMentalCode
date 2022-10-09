@@ -51,14 +51,6 @@ a:hover, a:active {
   width: min(100% - 40px, 1600px);
   margin: 2em auto 0.5em auto;
 }
-@media (max-width: 43.75em) {
-  .flex {
-    flex-direction: column;
-  }
-  .flex__sidebar {
-    border: none;
-  }
-}
 .flex__main {
   flex-basis: 70%;
 }
@@ -80,6 +72,7 @@ a:hover, a:active {
 .flex__sidebar .staff-picks .writer-details {
   display: flex;
   align-items: center;
+  margin: 0;
 }
 .flex__sidebar .staff-picks .writer-details img {
   height: 1.25em;
@@ -89,14 +82,15 @@ a:hover, a:active {
 }
 .flex__sidebar p {
   padding: 0.2em 0.3em 0.2em 0.3em;
+  margin-top: 1em;
   font-size: 0.8em;
   color: var(--my-black);
   font-weight: bold;
 }
 .flex__sidebar h5 {
-  margin: 0.2em 0;
+  margin: 0.1em 0;
   font-size: 1em;
-  color: var(--my-black);
+  color: var(--secondary-color);
   cursor: pointer;
 }
 .flex__sidebar a {
@@ -104,6 +98,7 @@ a:hover, a:active {
 }
 .flex__sidebar h3 {
   padding-left: 0;
+  margin-bottom: 0.1em;
 }
 .flex__sidebar .categories {
   display: flex;
@@ -129,6 +124,15 @@ a:hover, a:active {
   text-decoration: none;
   color: var(--secondary-color);
   font-size: small;
+}
+@media (max-width: 43.75em) {
+  .flex {
+    flex-direction: column;
+  }
+  .flex__sidebar {
+    border: none;
+    padding: 0;
+  }
 }
 
 p::-moz-selection {
@@ -444,7 +448,7 @@ h2 {
 }
 @media (max-width: 43.75em) {
   .similar-posts {
-    margin: 0.2em 0 0.2em 0;
+    margin: 0.2em 0;
   }
   .similar-posts h2 {
     padding-bottom: 0.2em;
@@ -456,7 +460,7 @@ h2 {
     padding: 0.2em;
   }
   .similar-posts .small-posts img {
-    height: 7em;
+    height: 5em;
   }
   .similar-posts .small-posts .small-icons p:last-child {
     display: none;
@@ -491,18 +495,17 @@ h2 {
 .similar-posts .flex-container .small-posts .small-icons {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 1.2em 0 1em 0;
-}
-.similar-posts .flex-container .small-posts .small-icons p {
-  padding: 0.3em;
 }
 .similar-posts .flex-container .small-posts h3 {
   padding: 0.5em 0;
 }
-.similar-posts .flex-container .small-posts p {
+.similar-posts .flex-container .small-posts .txt {
   padding: 0.8em 0 0 0;
+  margin: 0;
 }
-.similar-posts .flex-container .small-posts p a {
+.similar-posts .flex-container .small-posts .txt a {
   text-decoration: none;
   color: var(--primary-color);
   font-weight: bold;
@@ -530,7 +533,9 @@ h2 {
 }
 .comments .comment-info .user-details {
   display: flex;
-  align-items: top;
+  align-items: center;
+  justify-content: center;
+  margin: 1em 0 0 0;
   font-size: 0.9em;
 }
 .comments .comment-info .user-details p {

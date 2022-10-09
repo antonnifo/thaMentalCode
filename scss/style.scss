@@ -428,18 +428,19 @@ h2 {
 
     @include u.breakpoint(medium){  
 
-       margin: .2em 0 .2em 0;
+       margin: .2em 0;
        h2 { padding-bottom: .2em;}   
        
        .small-posts:last-child {
-        display: none;
+             display: none;
        }
 
        .small-posts {
             padding: .2em;
 
             img {
-                height: 7em;
+                height: 5em;
+            
             }
 
             .small-icons p:last-child {
@@ -477,6 +478,7 @@ h2 {
 
         .small-posts {
             padding: .5em;
+
             img {
                 // max-width: 12em;
                 max-width: 95%;
@@ -486,17 +488,18 @@ h2 {
             .small-icons {
                 display: flex;
                 align-items: center;
+                justify-content: space-between;
                 padding: 1.2em 0 1em 0;
-
-                p {padding: .3em;}
             }
 
             h3 {
                 padding: .5em 0;
             }
 
-            p {
+            .txt {
                 padding: .8em 0 0 0;
+                margin: 0;
+
                 a {
                     text-decoration: none;
                     color: var(--primary-color);
@@ -535,8 +538,11 @@ h2 {
 
         .user-details {
             display: flex;
-            align-items: top;
+            align-items: center;
+            justify-content: center;
+            margin: 1em 0 0 0 ;
             font-size: .9em;
+            
 
             p {padding: 0 0 0 .7em;}
 

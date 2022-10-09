@@ -1,0 +1,109 @@
+ <div class="form-box">
+                <div class="btn-box">
+                    <div id="btn"></div>
+                    <button type="button" class="toggle-btn">Log In</button>
+                    <button type="button" class="toggle-btn">Register</button>
+                </div>
+        
+                <form id="login" class="input-group" action="#">
+                    <input type="text" name="username"  class="input-field" placeholder="Username" required>
+                    <input type="password" name="password" class="input-field" required placeholder="password">
+                    <input type="checkbox" name="checkbox" class="check-box"><span>Remember Me</span>
+                    <button type="submit" class="submit-btn">Log In </button>
+                </form> 
+
+                <form id="register" class="input-group" action="#">
+                    <input type="text" name="username"  class="input-field" placeholder="Username" required>
+                    <input type="email" name="email"  class="input-field" placeholder="Email" required>
+                    <input type="password" name="password" class="input-field" required placeholder="password">
+                    <input type="checkbox" name="checkbox" class="check-box"><span>I Agree to the Terms & Conditions</span>
+                    <button type="submit" class="submit-btn">Register </button>
+                </form>                 
+
+            </div> 
+
+
+            
+
+                .form-box {
+
+        width: 380px;
+        height: 480px;
+        background: #fff;
+        position: relative;
+        margin: 8% auto;
+        padding: 5px;
+
+        .btn-box {
+            width: 220px;
+            margin: 35px auto;
+            box-shadow: 0 0 20px 9px #ff61241f;
+            position: relative;
+            border-radius: 30px;
+
+            #btn {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 110px;
+                height: 100%;
+                background: linear-gradient(to right, #ff105f, #ffad06);
+                border-radius: 30px;
+                transition: .5s;
+            }
+
+            .toggle-btn {
+                padding: 10px 30px;
+                cursor: pointer;
+                background: transparent;
+                border: 0;
+                outline: none;
+                position: relative;
+            }
+        }
+
+        .input-group {
+            position: absolute;
+            top: 180px;
+            width: 280px;
+            transition: .5s;
+
+            .input-field {
+                width: 100%;
+                padding: 10px 0;
+                margin: 5px 0;
+                border-left: 0;
+                border-right: 0;
+                border-top: 0;
+                border-bottom: 1px solid #999;
+                outline: none;
+                background: transparent;
+            }
+
+            .check-box {
+                margin: 30px 10px 30px 0;
+            }
+            span {
+                color: #777;
+                font-size: 12px;
+                position: absolute;
+                bottom: 68px;
+            }
+
+            .submit-btn {
+                width: 85%;
+                padding: 10px 30px;
+                margin: auto;
+                cursor: pointer;
+                display: block;
+                background: linear-gradient(to right, #ff105f, #ffad06);
+                border: 0;
+                outline: none;
+                border-radius: 30px;
+            }
+
+            #login {
+                left: 50px;
+            }
+        }
+    }
