@@ -209,11 +209,11 @@ h2 {
   padding: 0.1em 0.3em;
   border-radius: 10px;
 }
-.navbar nav {
-  line-height: 1.8em;
-}
-.navbar nav .menu-icons {
+.navbar .menu-icons {
   display: none;
+}
+.navbar nav {
+  line-height: 0.6em;
 }
 .navbar nav ul {
   display: flex;
@@ -224,6 +224,14 @@ h2 {
   padding: 0.6em;
 }
 @media (max-width: 43.75em) {
+  .navbar .menu-icons {
+    display: block;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 10px;
+    cursor: pointer;
+  }
   .navbar nav {
     position: absolute;
     top: 0;
@@ -235,14 +243,6 @@ h2 {
     z-index: 4;
     transition: 1s;
   }
-  .navbar nav .menu-icons {
-    display: block;
-    color: white;
-    font-weight: bold;
-    font-size: 22px;
-    margin: 10px;
-    cursor: pointer;
-  }
   .navbar nav ul {
     display: block;
   }
@@ -250,7 +250,7 @@ h2 {
 
 .hero {
   min-height: 63vh;
-  width: 100%;
+  max-width: 100%;
   background-image: url(../images/background/pexels-tiana-238302.jpg);
   background-position: center;
   background-size: cover;
@@ -282,14 +282,14 @@ h2 {
 
 .post {
   border-bottom: 0.01em solid var(--secondary-color);
-  margin: 1.2em auto;
+  margin: 1.2em 0;
   padding: 0 0.2em;
   max-width: 80%;
 }
 .post__titles {
   display: flex;
   align-items: center;
-  width: 660px;
+  max-width: 660px;
   height: 40px;
   line-height: 1, 25em;
   font-family: "Oswald", sans-serif;
@@ -349,6 +349,9 @@ h2 {
   color: var(--my-black);
 }
 @media (max-width: 43.75em) {
+  .post {
+    max-width: 100%;
+  }
   .post__body .body-text h2 a {
     font-size: 0.8em;
   }
@@ -357,7 +360,6 @@ h2 {
     height: 5em;
     display: block;
     border-radius: 0.42em;
-    margin-left: 0;
   }
   .post__body .description {
     display: none;
