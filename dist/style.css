@@ -135,6 +135,31 @@ a:hover, a:active {
   }
 }
 
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-center .results {
+  margin: 7em auto 2.5em auto;
+}
+.flex-center .results h2 {
+  text-decoration: underline;
+}
+.flex-center .results h3 {
+  color: white;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+@media (max-width: 43.75em) {
+  .flex-center .results {
+    margin: 5em auto 1.5em auto;
+  }
+}
+
 p::-moz-selection {
   color: white;
   background: var(--primary-color);

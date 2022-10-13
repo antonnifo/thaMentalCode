@@ -120,3 +120,35 @@
     }
     
 }
+
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+    .results {
+               margin: 7em auto 2.5em auto;
+
+               h2 {
+                    text-decoration: underline;
+               }
+               
+
+               h3 {
+                color: white;
+                background-color: var(--primary-color);
+                border-radius: 10px;
+                width: fit-content;
+
+               }
+        
+    }
+
+    @include u.breakpoint(medium){
+
+            .results {
+                   margin: 5em auto 1.5em auto;    
+                   }      
+               }
+}
