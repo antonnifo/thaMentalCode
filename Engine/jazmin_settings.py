@@ -1,6 +1,6 @@
 JAZZMIN_SETTINGS = {
     # title of the window
-    'site_title': 'theMentaCode Admin',
+    'site_title': 'theMentalCode Admin',
 
     # Title on the brand, and the login screen (19 chars max)
     'site_header': 'theMentalCode',
@@ -9,7 +9,7 @@ JAZZMIN_SETTINGS = {
     # 'site_logo': 'images/avatar/ava.jpg',
 
     # Welcome text on the login screen
-    'welcome_sign': 'Welcome to theMentaCode',
+    'welcome_sign': 'Welcome to theMentalCode',
 
     # Copyright on the footer
     'copyright': 'Antonnifo',
