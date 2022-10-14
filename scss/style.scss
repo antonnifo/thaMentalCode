@@ -332,15 +332,19 @@ h2 {
 
         }
 
-
-
-
-
 // <----blog details page --------->
+
+.blog {
+    margin-top: 7%;
+
+    @include u.breakpoint(medium){ 
+         margin-top: 17%;
+    }
+}
 
 .blog-details {
     flex-basis: 70%;
-    margin: 5%;
+    margin: 0 5%;
 
     img {
         width: 100%;

@@ -410,9 +410,18 @@ h2 {
   }
 }
 
+.blog {
+  margin-top: 7%;
+}
+@media (max-width: 43.75em) {
+  .blog {
+    margin-top: 17%;
+  }
+}
+
 .blog-details {
   flex-basis: 70%;
-  margin: 5%;
+  margin: 0 5%;
 }
 .blog-details img {
   width: 100%;
