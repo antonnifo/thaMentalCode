@@ -1,0 +1,24 @@
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: 0;
+    font-family: 'Oswald', sans-serif;
+    color: var(--my-black);  
+    cursor: pointer;
+}
+
+p {
+    margin-top: 0;
+}
+
+a:link, a:visited, a:active {
+    text-decoration: none;
+    color: var(--my-black);
+    font-family: 'Oswald', sans-serif;
+}
+
+a:hover , a:active {
+                        font-weight: bolder;
+                }
