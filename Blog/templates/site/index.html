@@ -101,84 +101,62 @@
         <div class="tags-section">
             
             <h3 class="title">Popular Tags</h3>
-            <div class="tags">                   
-                <a href="tag.html">Film</a>
-            
-                <a href="tag.html">ZIFF</a>
-            
-                <a href="tag.html">awards</a>
-            
-                <a href="tag.html">fml</a>
-            
-                <a href="tag.html">foxtonmedia</a>
-            
-                <a href="tag.html">WomenWhoDream</a>
-            
-                <a href="tag.html">Interview</a>
-            
-            
+            <div class="tags">     
+                {% for tag in tags %}              
+                        <a href="tag.html">{{tag.name}}</a>
+                {% endfor %}            
             </div>
         </div>
 
         <div class="staff-picks">
             <h3 class="title">Staff Picks</h3>
 
-            <div class="staff-picks-box">
-                <div class="writer-details">
-                    <img src="images/profile/pexels-suliman-sallehi-1704488.jpeg" alt="Profile pic">
-                    <p>Antonnifo Gaming</p>                       
-                </div>
-                <a href="blog-detail.html"><h5>Tha Art of Gaming Online</h5></a>
-            </div>
+            {% for item in featured %}
 
-            <div class="staff-picks-box">
-                <div class="writer-details">
-                    <img src="images/profile/pexels-andre-furtado-1264210.jpg" alt="Profile pic">
-                    <p>Kamau Kinuthia</p>                       
+                <div class="staff-picks-box">
+                    <div class="writer-details">
+                        <img src="{% static 'images/profile/pexels-suliman-sallehi-1704488.jpeg' %}" alt="Profile pic">
+                        <p>{{item.author}}</p>                       
+                    </div>
+                    <a href="blog-detail.html"><h5>{{item.title}}</h5></a>
                 </div>
-                <a href="blog-detail.html"><h5>My first Hello world</h5></a>
-            </div>
-            
-            <div class="staff-picks-box">
-                <div class="writer-details">
-                    <img src="images/profile/pexels-pixabay-415829.jpeg" alt="Profile pic">
-                    <p>Python Guy</p>                       
-                </div>
-                <a href="blog-detail.html"><h5>Guido Von Rossom in Kenya</h5></a>
-            </div>                    
 
+            {% endfor %}
 
         </div>
 
         <div class="categories-area">
                 <h3 class="title">Top Categories</h3>
-                <div class="categories">
-                    <a href="category.html"><h5>Taking Care of Your Code</h5></a>
-                    <p class="pill">21</p>
-                </div>
+                {% for c in categories %}
+                    <div class="categories">
+                        <a href="category.html"><h5>{{c.name}}</h5></a>
+                        <p class="pill">
 
-                <div class="categories">
-                    <a href="category.html"><h5>Github for Dumies</h5></a>
-                    <p class="pill">12</p>
-                </div>
-
-                <div class="categories">                       
-                    <a href="category.html"><h5>Do you need github for sure</h5></a>
-                    <p class="pill">20</p>
-                </div>
-
-                <div class="categories staff-picks-box">                            
-                    <a href="category.html"><h5>How code editors work for You</h5></a>
-                    <p class="pill">10</p>
-                </div>
-
-                
-                <div class="categories">                          
-                    <a href="category.html"><h5>Github for Dumies</h5></a>
-                    <p class="pill">19</p>
-                </div>
+                            {% with c.posts.count as total_posts %}                                                   
+                                    {{ total_posts }}                     
+                            {% endwith %}
+                        </p>
+                    </div>
+                {% endfor %}
 
         </div>
+
+        <div class="staff-picks">
+            <h3 class="title">Popular Posts</h3>
+
+            {% for item in popular_posts %}
+
+                <div class="staff-picks-box">
+                    <div class="writer-details">
+                        <img src="{% static 'images/profile/pexels-suliman-sallehi-1704488.jpeg' %}" alt="Profile pic">
+                        <p>{{item.author}}</p>                       
+                    </div>
+                    <a href="blog-detail.html"><h5>{{item.title}}</h5></a>
+                </div>
+
+            {% endfor %}
+
+        </div>        
 
         <footer>
             <ul>
