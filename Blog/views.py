@@ -15,9 +15,15 @@ OBJECT_LIST = Post.published.all()
 
 
 def index(request):
+
+    context = {
+                'posts': OBJECT_LIST[:8],
+                'tags' : Post.tags.most_common()[:10],
+                'featured' : OBJECT_LIST.filter(featured=True),
+                'categories' : Category.objects.all()[:5],
+                'popular_posts' : OBJECT_LIST.order_by('-hit_count_generic__hits')[:3]
+    }
  
-    return render (request, 'site/index.html' ,{
-        'posts': OBJECT_LIST[:8]
-    })
+    return render (request, 'site/index.html' ,context=context)
 
    
