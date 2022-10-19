@@ -1,0 +1,72 @@
+    {% load static %}
+    
+                
+    <aside class="flex__sidebar">
+        <div class="tags-section">
+            
+            <h3 class="title">Popular Tags</h3>
+            <div class="tags">     
+                {% for tag in tags %}              
+                        <a href="tag.html">{{tag.name}}</a>
+                {% endfor %}            
+            </div>
+        </div>
+
+        <div class="staff-picks">
+            <h3 class="title">Staff Picks</h3>
+
+            {% for item in featured %}
+
+                <div class="staff-picks-box">
+                    <div class="writer-details">
+                        <img src="{% static 'images/profile/pexels-suliman-sallehi-1704488.jpeg' %}" alt="Profile pic">
+                        <p>{{item.author}}</p>                       
+                    </div>
+                    <a href="{{item.get_absolute_url}}"><h5>{{item.title}}</h5></a>
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+        <div class="categories-area">
+                <h3 class="title">Top Categories</h3>
+                {% for c in categories %}
+                    <div class="categories">
+                        <a href="category.html"><h5>{{c.name}}</h5></a>
+                        <p class="pill">
+
+                            {% with c.posts.count as total_posts %}                                                   
+                                    {{ total_posts }}                     
+                            {% endwith %}
+                        </p>
+                    </div>
+                {% endfor %}
+
+        </div>
+
+        <div class="staff-picks">
+            <h3 class="title">Popular Posts</h3>
+
+            {% for item in popular_posts %}
+
+                <div class="staff-picks-box">
+                    <div class="writer-details">
+                        <img src="{% static 'images/profile/pexels-suliman-sallehi-1704488.jpeg' %}" alt="Profile pic">
+                        <p>{{item.author}}</p>                       
+                    </div>
+                    <a href="{{item.get_absolute_url}}"><h5>{{item.title}}</h5></a>
+                </div>
+
+            {% endfor %}
+
+        </div>        
+
+        <footer>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms</a></li>
+            </ul>
+        </footer>
+
+    </aside>  
