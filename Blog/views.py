@@ -81,3 +81,40 @@ def post_detail(request, year, month, day, post):
     return render(request,
                     'site/blog-detail.html', context
                  )   
+
+def list_category(request,tag_slug=None, category_slug=None):
+
+
+    category   = None
+    if category_slug:
+        category = get_object_or_404(Category, slug=category_slug)
+        post = OBJECT_LIST.filter(category=category)
+    
+    tag = None
+    if tag_slug:
+        tag  = get_object_or_404(Tag, slug=tag_slug)
+        post = OBJECT_LIST.filter(tags__in=[tag])
+
+    paginator = Paginator(post, 5)
+    page = request.GET.get('page')
+
+    try:
+
+        posts = paginator.page(page)
+
+    except PageNotAnInteger:
+
+        # If page is not an integer deliver the first page
+        posts = paginator.page(1)
+
+    except EmptyPage:
+        # If page is out of range deliver last page of results
+        posts = paginator.page(paginator.num_pages)
+    
+    return render(request,
+                    'site/category.html',
+                    {'posts'    : posts,
+                     'category' : category,
+                     'page'     : page,
+                     'tag'      : tag,
+                    })  
