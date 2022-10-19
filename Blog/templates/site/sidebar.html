@@ -7,7 +7,7 @@
             <h3 class="title">Popular Tags</h3>
             <div class="tags">     
                 {% for tag in tags %}              
-                        <a href="tag.html">{{tag.name}}</a>
+                        <a href="{% url 'blog:post_list_by_tag' tag.slug %}">{{tag.name}}</a>
                 {% endfor %}            
             </div>
         </div>
@@ -33,7 +33,7 @@
                 <h3 class="title">Top Categories</h3>
                 {% for c in categories %}
                     <div class="categories">
-                        <a href="category.html"><h5>{{c.name}}</h5></a>
+                        <a href="{{c.get_absolute_url}}"><h5>{{c.name}}</h5></a>
                         <p class="pill">
 
                             {% with c.posts.count as total_posts %}                                                   
