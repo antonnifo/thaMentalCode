@@ -1,35 +1,10 @@
+{% extends 'base.html' %}
 {% load static %}
 {% load humanize %}
 {% load hitcount_tags %}
 {% load code_tags %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'dist/style.css' %}">
-    <script src="https://kit.fontawesome.com/743dee88bd.js" crossorigin="anonymous"></script>
-    <title> theMentalCode: Vibes of Healing</title>
-</head>
-<body>
-      
-<section class="navbar">
-    <!-- <a href="tag.html"><img src="tag.html" alt="logo"></a> -->
-    <a href="index.html" style="font-weight:bold;">TheMental<span class="code">Code</span></a>
-    <nav id="NavLinks">   
-        <i class="menu-icons fa-solid fa-xmark" onclick="hideMenu()"></i>                  
-        <ul>
-            <li ><a href="#" ><i class="fa-regular fa-rectangle-list" ></i></a></li>
-            <li><a href="#"><i class="fa-solid fa-bell-slash"></i></a></li>
-            <li><a href="login.html">Sign in</a></li>
-            <li><a href="register.html" class="contact-btn">Sign Up</a></li>        
-        </ul>                       
-    </nav>
-    <i class="menu-icons fa-solid fa-bars" onclick="showMenu()"></i>
-
-</section>      
+{% block body %}    
                 
 <section class="hero">      
     <div class="form">
@@ -56,7 +31,7 @@
 
                 <div class="post__body">
                     <div class="body-text">
-                        <h2><a href="blog-detail.html">{{item.title}}</a></h2>
+                        <h2><a href="{{item.get_absolute_url}}">{{item.title}}</a></h2>
                         <p class="description">
                             {{item.body |truncatewords_html:30 | markdown}}
                         </p>
@@ -96,92 +71,7 @@
                                                           
     </div>
 
-    <!-- <---------------------sidebar ---------------------------->                 
-    <aside class="flex__sidebar">
-        <div class="tags-section">
-            
-            <h3 class="title">Popular Tags</h3>
-            <div class="tags">     
-                {% for tag in tags %}              
-                        <a href="tag.html">{{tag.name}}</a>
-                {% endfor %}            
-            </div>
-        </div>
-
-        <div class="staff-picks">
-            <h3 class="title">Staff Picks</h3>
-
-            {% for item in featured %}
-
-                <div class="staff-picks-box">
-                    <div class="writer-details">
-                        <img src="{% static 'images/profile/pexels-suliman-sallehi-1704488.jpeg' %}" alt="Profile pic">
-                        <p>{{item.author}}</p>                       
-                    </div>
-                    <a href="blog-detail.html"><h5>{{item.title}}</h5></a>
-                </div>
-
-            {% endfor %}
-
-        </div>
-
-        <div class="categories-area">
-                <h3 class="title">Top Categories</h3>
-                {% for c in categories %}
-                    <div class="categories">
-                        <a href="category.html"><h5>{{c.name}}</h5></a>
-                        <p class="pill">
-
-                            {% with c.posts.count as total_posts %}                                                   
-                                    {{ total_posts }}                     
-                            {% endwith %}
-                        </p>
-                    </div>
-                {% endfor %}
-
-        </div>
-
-        <div class="staff-picks">
-            <h3 class="title">Popular Posts</h3>
-
-            {% for item in popular_posts %}
-
-                <div class="staff-picks-box">
-                    <div class="writer-details">
-                        <img src="{% static 'images/profile/pexels-suliman-sallehi-1704488.jpeg' %}" alt="Profile pic">
-                        <p>{{item.author}}</p>                       
-                    </div>
-                    <a href="blog-detail.html"><h5>{{item.title}}</h5></a>
-                </div>
-
-            {% endfor %}
-
-        </div>        
-
-        <footer>
-            <ul>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms</a></li>
-            </ul>
-        </footer>
-
-    </aside>                
+    {% show_sidebar  %}              
     
 </div>
-
-
-<!-- -------------Js for mobile toggle menu---------- -->
- <script>
-    var navLinks = document.getElementById("NavLinks")
-
-    function showMenu(){
-        navLinks.style.right = "0";
-    }
-
-    function hideMenu(){
-        navLinks.style.right = "-200px";
-    }    
- </script>
-
-</body>
-</html>
+{% endblock body %}
