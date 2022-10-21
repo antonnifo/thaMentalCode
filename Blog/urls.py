@@ -11,5 +11,6 @@ urlpatterns = [
      path('tag/<slug:tag_slug>/',
             views.list_category, name='post_list_by_tag'),   
      path('category/<slug:category_slug>/',
-                      views.list_category, name='post_list_by_category'),                
+                      views.list_category, name='post_list_by_category'), 
+     path('results/', views.post_search,name='search'),                                 
 ]
