@@ -43,9 +43,9 @@
                 <div class="post__body">
                     <div class="body-text">
                         <h2><a href="{{item.get_absolute_url}}">{{item.title}}</a></h2>
-                        <p class="description">
+                        <div class="description">
                              {{item.body |truncatewords_html:30 | markdown}}
-                        </p>
+                        </div>
                     </div>
                     <img class="post__image" src="{{item.photo.url}}" alt="Post image">
                 </div>

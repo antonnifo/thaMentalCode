@@ -8,8 +8,8 @@
                 
 <section class="hero">      
     <div class="form">
-        <form action="#">
-            <input type="text" name="search" placeholder="Search.."> 
+        <form action="{% url 'blog:search' %}">{% csrf_token %}
+            <input type="text" name="s" placeholder="Search.."> 
         </form>
     </div>
 </section>
@@ -32,9 +32,9 @@
                 <div class="post__body">
                     <div class="body-text">
                         <h2><a href="{{item.get_absolute_url}}">{{item.title}}</a></h2>
-                        <p class="description">
+                        <div class="description">
                             {{item.body |truncatewords_html:30 | markdown}}
-                        </p>
+                        </div>
                     </div>
                     <img class="post__image" src="{{item.photo.url}}" alt="{{item.title}}">
                 </div>
@@ -42,9 +42,10 @@
                 <div class="post__footer tags">
                     <ul>
                         {% for tag in item.tags.all %}
-                            <li><a href="tag.html">{{ tag.name }}</a></li>
+                            <li><a href="{% url 'blog:post_list_by_tag' tag.slug %}">{{ tag.name }}</a></li>
                         {% endfor %}
                         <li>5 min read</li>
+                        
 
                         
                     </ul>
@@ -64,11 +65,9 @@
 
             </div>
         {% empty %}
-                  <h2> No posts at the moment please check bacl later. </h2>
+                  <h2> No posts at the moment please check back later. </h2>
         {% endfor %}
-
-
-                                                          
+                                                      
     </div>
 
     {% show_sidebar  %}              
