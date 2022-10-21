@@ -118,3 +118,41 @@ def list_category(request,tag_slug=None, category_slug=None):
                      'page'     : page,
                      'tag'      : tag,
                     })  
+
+def post_search(request):
+
+    query    = None
+    results = []
+    
+    if 's' in request.GET:
+
+        query   = request.GET['s'] 
+
+        search_vector = SearchVector('title', weight='A') + SearchVector('body',weight='B')
+        search_query = SearchQuery(query)
+                    
+        results = OBJECT_LIST.annotate(
+                        rank=SearchRank(search_vector, search_query)
+                        ).filter(rank__gte=0.3).order_by('-rank')
+
+        paginator = Paginator(results, 6)
+        page = request.GET.get('page', 1)
+
+    try:
+        results = paginator.page(page)
+    except PageNotAnInteger:
+
+        # If page is not an integer deliver the first page
+        results = paginator.page(1)
+
+    except EmptyPage:
+        # If page is out of range deliver last page of results
+        results = paginator.page(paginator.num_pages)
+                
+    return render(request,
+                    'site/search_results.html',
+                    {
+                        'query': query,
+                        'results': results,
+                        'page': page,            
+                    })
