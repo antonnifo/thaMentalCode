@@ -337,9 +337,10 @@ h2 {
   border-radius: 0.42em;
   margin-left: 1.8em;
 }
-.post__body .description {
+.post__body p {
   font-family: "Roboto", sans-serif;
-  color: var(--secondary-color);
+  /* color: var(--secondary-color); */
+  color: yellow;
 }
 .post__footer {
   margin: 2em 0 1.2em -2.5em;
@@ -386,7 +387,7 @@ h2 {
     display: block;
     border-radius: 0.42em;
   }
-  .post__body .description {
+  .post__body .description p{
     display: none;
   }
   .post__footer {

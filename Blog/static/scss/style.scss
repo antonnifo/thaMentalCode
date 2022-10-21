@@ -219,9 +219,10 @@ h2 {
                     }
                     
 
-                    .description {
+                    p {
                         font-family: 'Roboto', sans-serif;
-                        color: var(--secondary-color);
+                        // color: var(--secondary-color);
+                        color: yellow;
                     }
                 }
 
@@ -290,7 +291,7 @@ h2 {
                                 // margin-left: 0;
                             }
                             
-                            .description {
+                            p {
                                 display: none;
                             }
                         }    
