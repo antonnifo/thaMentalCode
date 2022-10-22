@@ -7,6 +7,8 @@ __pycache__/
 *.so
 
 media/
+passenger_wsgi.py
+tmp/
 
 # Distribution / packaging
 .Python
