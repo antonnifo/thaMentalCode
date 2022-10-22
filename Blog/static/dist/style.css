@@ -339,8 +339,8 @@ h2 {
 }
 .post__body p {
   font-family: "Roboto", sans-serif;
-  /* color: var(--secondary-color); */
-  color: yellow;
+  color: var(--secondary-color);
+  
 }
 .post__footer {
   margin: 2em 0 1.2em -2.5em;
