@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'dist/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/logo/favicon.ico' %}" />  
     <script src="https://kit.fontawesome.com/743dee88bd.js" crossorigin="anonymous"></script>
     <title> {% block title %} theMentalCode:Vibes of Healing {% endblock title %} </title>
     
@@ -14,8 +15,8 @@
 <body>
       
 <section class="navbar">
-    <!-- <a href="tag.html"><img src="tag.html" alt="logo"></a> -->
-    <a href="{% url 'blog:home' %}" style="font-weight:bold;">TheMental<span class="code">Code</span></a>
+    <a href="{% url 'blog:home' %}"><img src="{% static 'images/logo/logo.png' %}" class="logo" alt="TMC logo"></a>
+    <!-- <a href="{% url 'blog:home' %}" style="font-weight:bold;">TheMental<span class="code">Code</span></a> -->
     <nav id="NavLinks">   
         <i class="menu-icons fa-solid fa-xmark" onclick="hideMenu()"></i>                  
         <ul>
