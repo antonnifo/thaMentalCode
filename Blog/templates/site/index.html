@@ -24,7 +24,7 @@
 
             <div class="post">
                 <div class="post__titles">
-                    <img class="profile-pic" src="{% static 'images/profile/pexels-suliman-sallehi-1704488.jpeg' %}" alt="Profile Picture">
+                    <img class="profile-pic" src="{% static 'images/logo/icon.png' %}" alt="Profile Picture">
                     <h3>{{item.author}}</h3>
                     <p class="date">{{item.publish | naturaltime}}</p>
                 </div>
@@ -44,7 +44,7 @@
                         {% for tag in item.tags.all %}
                             <li><a href="{% url 'blog:post_list_by_tag' tag.slug %}">{{ tag.name }}</a></li>
                         {% endfor %}
-                        <li>5 min read</li>
+                        <!-- <li>5 min read</li> -->
                         
 
                         
