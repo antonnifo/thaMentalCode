@@ -42,6 +42,7 @@ class Category(BaseContent):
 
 class Post(BaseContent):
     
+    objects = models.Manager() # The default manager.
     published = PublishedManager() # custom manager.
     tags = TaggableManager()
     
