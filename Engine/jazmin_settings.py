@@ -6,7 +6,7 @@ JAZZMIN_SETTINGS = {
     'site_header': 'theMentalCode',
 
     # square logo to use for your site, must be present in static files, used for favicon and brand on top left
-    # 'site_logo': 'images/avatar/ava.jpg',
+    'site_logo': 'images/logo/icon.png',
 
     # Welcome text on the login screen
     'welcome_sign': 'Welcome to theMentalCode',
@@ -33,7 +33,7 @@ JAZZMIN_SETTINGS = {
 
         # external url that opens in a new window (Permissions can be added)
         # {'name': 'Support', 'url': 'https://github.com/farridav/django-jazzmin/issues', 'new_window': True},
-        # {'name': 'Site', 'url': 'https://www.citizenweekly.org/', 'new_window': True},
+        # {'name': 'Site', 'url': 'https://code.antonnifo.co.ke/', 'new_window': True},
 
         # model admin to link to (Permissions checked against model)
         {'model': 'Blog.Post'},
