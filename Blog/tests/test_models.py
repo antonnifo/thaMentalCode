@@ -8,47 +8,30 @@ from Blog.models import Post, Category, Comment
 class PostTestCase(TestCase):
     def setUp(self):
         self.user = User.objects.create_user(username="admin")
-        
+        self.poster = SimpleUploadedFile(name='logo.png', content=open('Blog/static/images/logo/logo.png', 'rb').read())
+        self.category = Category.objects.create(name="Mental Health",slug="mental-health",publish=timezone.now())
+        self.post = Post.objects.create(author=self.user,title="only a test",slug ="only-a-test",body="yes, this is only a test",\
+                                    publish=timezone.now(),photo=self.poster,\
+                                    category=self.category,
+                                    status="published",featured=False)  
+        self.post.tags.add('tagz','tag1') 
 
-
-    # category model tests
-    def create_category(self, name="Mental Health", slug="mental-health"):
-        return Category.objects.create(name=name,slug=slug,publish=timezone.now())    
+        self.comment = Comment.objects.create(post=self.post, name="Antonnifo",\
+                                        email='test@example.com', body='Another comment',publish=timezone.now(), \
+                                        active=True)       
 
     def test_category_creation(self):
-        category = self.create_category()
-        self.assertTrue(isinstance(category, Category))
-        self.assertEqual(category.__str__(), category.name)
-
-    # post model tests
-    def create_post(self, title="only a test",slug ="only-a-test",body="yes, this is only a test",category=""):
-        return Post.objects.create(author=self.user,title=title, body=body,\
-                                    publish=timezone.now(),photo=self.poster,\
-                                    category=self.create_category(),
-                                    status="published",featured=False)
+        self.assertTrue(isinstance(self.category, Category))
+        self.assertEqual(self.category.__str__(), self.category.name)
 
     def test_post_creation(self):
-        post = self.create_post()
+        post = self.post
         self.assertTrue(isinstance(post, Post))
         self.assertEqual(post.__str__(), post.title)
 
-
-    # comment model tests
-    def create_comment(self,name="Antonnifo", email="test@gmail.com",body= "well done"):
-        return Comment.objects.create(post=self.create_post(category=self.create_category(name="Mental Health1", slug="mental-health1")), name=name,\
-                                        email=email, body=body,publish=timezone.now(), \
-                                        active=True)    
-
-    # def test_comment_creation(self):
-    #     comment = self.create_comment()
-    #     self.assertTrue(isinstance(comment, Comment))
-    #     self.assertEqual(comment.__str__(), 'Comment by Antonnifo on {}'.format(self.create_post()))
+    def test_comment_creation(self):
+        comment = self.comment
+        self.assertTrue(isinstance(comment, Comment))
+        self.assertEqual(comment.__str__(), 'Comment by Antonnifo on {}'.format(self.post))
 
 
-    # def test_whatever_list_view(self):
-    #     w = self.create_whatever()
-    #     url = reverse("whatever.views.whatever")
-    #     resp = self.client.get(url)
-
-    #     self.assertEqual(resp.status_code, 200)
-    #     self.assertIn(w.title, resp.content)
