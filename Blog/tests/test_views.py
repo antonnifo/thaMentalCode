@@ -93,3 +93,25 @@ class PostDetailViewTests(TestCase):
                                             self.post.slug]), data=data)
 
         self.assertEqual(response.status_code, 200)
+
+
+class PostSearchViewTests(TestCase):
+
+    def setUp(self):
+        self.user = User.objects.create_user(username="admin")
+        self.poster = SimpleUploadedFile(name='logo.png', content=open('Blog/static/images/logo/logo.png', 'rb').read())
+        self.category = Category.objects.create(name="Mental Health",slug="mental-health",publish=timezone.now())
+        self.post = Post.objects.create(author=self.user,title="only a test",slug ="only-a-test",body="yes, this is only a test",\
+                                    publish=timezone.now(),photo=self.poster,\
+                                    category=self.category,
+                                    status="published",featured=False)
+
+    def test_GET_search_post(self):
+        response = self.client.get(reverse("blog:search"), {'s': 'mental'})
+        self.assertEqual(response.status_code, 200)
+
+    # def test_pagination_returns_last_page_if_page_out_of_range(self):
+    #     response = self.client.get(reverse('blog:search'),  {'s': 'mental',  'page': 999})
+    #     # Check that if page is out of range (e.g. 999), deliver last page of results
+    #     self.assertEquals(response.context['results'].number, response.context['results'].paginator.page(2).number)
+     
